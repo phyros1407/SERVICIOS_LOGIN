@@ -58,6 +58,12 @@ public class servicios extends HttpServlet {
 			responseobj.setSuccess(true);
 			responseobj.setObject(usuarioLog);
 			
+		}else{
+			responseobj=new ResponseObject();
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			responseobj.setSuccess(true);
+			responseobj.setObject(null);
 		}
 		response.getWriter().write(new Gson().toJson(responseobj));
 		System.out.println("json" + new Gson().toJson(responseobj));
