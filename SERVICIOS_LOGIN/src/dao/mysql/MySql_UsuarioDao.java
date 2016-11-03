@@ -19,7 +19,7 @@ public class MySql_UsuarioDao extends MySqlDAOFactory implements UsuarioDao {
 			Connection con = MySqlDAOFactory.obtenerConexion();
 			Statement stmt= con.createStatement();
 			String  consulta ="select  usu.ID as IDUSU, usu.CAR_ID as ROL_ID ,usu.*,pe.NOM,pe.APE_PAT,co.COR  from usuario usu, persona pe, contacto co "
-					+ " where usu='"+usuario+"'  and pe.id=usu.PER_ID and usu.PER_ID=co.PER_ID";
+					+ " where usu='"+usuario+"'  and pe.id=usu.PER_ID and usu.PER_ID=co.PER_ID and usu.CAR_ID=5 ";
 			ResultSet rs = stmt.executeQuery(consulta);
 			int idUsu;
 			int intento;
