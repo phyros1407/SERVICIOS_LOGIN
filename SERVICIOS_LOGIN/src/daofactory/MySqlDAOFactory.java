@@ -10,15 +10,14 @@ public class MySqlDAOFactory extends DAOFactory {
 	
 	public static Connection obtenerConexion(){
 		Connection conexion=null;
-		/*try {
+		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url="jdbc:mysql://node52782-dis-nanosport.whelastic.net/bd_gym_3.6_data";
-			conexion = DriverManager.getConnection(url,"root","GADchg15583");
+			String url="jdbc:mysql://mysql19777-productogym.j.facilcloud.com/bd_gym_4.6.7_data";
+			conexion = DriverManager.getConnection(url,"root","LZQrgn46917");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		*/
+		/*
 		 try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url="jdbc:mysql://localhost:3306/bd_gym_4.6.6_data";
@@ -26,7 +25,7 @@ public class MySqlDAOFactory extends DAOFactory {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		 
+		 */
 		return conexion;
 	}
 
