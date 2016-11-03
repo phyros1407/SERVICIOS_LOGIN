@@ -8,7 +8,6 @@ import java.io.IOException;
 
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +20,8 @@ import beans.UsuarioBean;
 /**
  * Servlet implementation class ServletLogin
  */
-@WebServlet("/ServletLogin")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, 	// 2MB
-maxFileSize = 1024 * 1024 * 10, 		// 10MB
-maxRequestSize = 1024 * 1024 * 50)		// 50MB
+@WebServlet("/servicios")
+	// 50MB
 public class servicios extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -36,9 +33,6 @@ public class servicios extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    public void init() {
- 	
- 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -58,11 +52,12 @@ public class servicios extends HttpServlet {
 		
 		if(usuarioLog!=null){
 
-		responseobj=new ResponseObject();
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-		responseobj.setSuccess(true);
-		responseobj.setObject(usuarioLog);
+			responseobj=new ResponseObject();
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			responseobj.setSuccess(true);
+			responseobj.setObject(usuarioLog);
+			
 		}
 		response.getWriter().write(new Gson().toJson(responseobj));
 		System.out.println("json" + new Gson().toJson(responseobj));

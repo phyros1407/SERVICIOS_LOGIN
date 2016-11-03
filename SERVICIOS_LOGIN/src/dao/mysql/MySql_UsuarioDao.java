@@ -18,7 +18,7 @@ public class MySql_UsuarioDao extends MySqlDAOFactory implements UsuarioDao {
 		try {
 			Connection con = MySqlDAOFactory.obtenerConexion();
 			Statement stmt= con.createStatement();
-			String  consulta ="select usu.id as idUsu,usu.CAR_ID as ROL_ID ,usu.*,pe.NOM,pe.APE_PAT,co.COR  from usuario usu, persona pe, contacto co "
+			String  consulta ="select  usu.ID as IDUSU, usu.CAR_ID as ROL_ID ,usu.*,pe.NOM,pe.APE_PAT,co.COR  from usuario usu, persona pe, contacto co "
 					+ " where usu='"+usuario+"'  and pe.id=usu.PER_ID and usu.PER_ID=co.PER_ID";
 			ResultSet rs = stmt.executeQuery(consulta);
 			int idUsu;
@@ -39,7 +39,7 @@ public class MySql_UsuarioDao extends MySqlDAOFactory implements UsuarioDao {
 						
 						
 						usu.setPersonaId(rs.getInt("PER_ID"));
-						usu.setUsuId(rs.getInt("idUsu"));
+						usu.setUsuId(rs.getInt("IDUSU"));
 						usu.setRolId(rs.getInt("ROL_ID"));
 						usu.setEstado(rs.getString("EST_ACT"));
 						usu.setNombreUsu(rs.getString("usu"));
