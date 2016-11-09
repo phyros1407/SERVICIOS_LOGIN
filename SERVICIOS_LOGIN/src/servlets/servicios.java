@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import beans.PersonaBean;
 import beans.UsuarioBean;
 
 /**
@@ -40,7 +41,7 @@ public class servicios extends HttpServlet {
 		
 		
 		String usuario = request.getParameter("usuario");
-		String password = request.getParameter("pass");
+		String password = request.getParameter("password");
 		
 		ResponseObject responseobj=null;
 		
@@ -48,15 +49,15 @@ public class servicios extends HttpServlet {
 		
 		UsuarioDao usudao = dao.getUsuarioDao();
 		
-		UsuarioBean usuarioLog = usudao.validarIngreso(usuario, password);
+		PersonaBean persona = usudao.validarIngreso(usuario, password);
 		
-		if(usuarioLog!=null){
+		if(persona!=null){
 
 			responseobj=new ResponseObject();
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			responseobj.setSuccess(true);
-			responseobj.setObject(usuarioLog);
+			responseobj.setObject(persona);
 			
 		}else{
 			responseobj=new ResponseObject();

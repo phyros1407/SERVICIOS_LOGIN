@@ -1,8 +1,9 @@
 package dao.interfaces;
 
-import beans.UsuarioBean;
-
+import beans.PersonaBean;
 
 public interface UsuarioDao {
-	public UsuarioBean validarIngreso(String usuario,String contraseña);
+	
+	public PersonaBean validarIngreso(String usuario,String contraseña);
+	
 }
