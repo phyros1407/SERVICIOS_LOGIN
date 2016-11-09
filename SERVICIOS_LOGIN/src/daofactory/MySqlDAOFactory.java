@@ -11,6 +11,8 @@ public class MySqlDAOFactory extends DAOFactory {
 	public static Connection obtenerConexion(){
 		
 		Connection conexion=null;
+		
+		//CONEXION EN LA NUBE
 		/*
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -22,7 +24,7 @@ public class MySqlDAOFactory extends DAOFactory {
 		
 		*/
 		
-		
+		//CONEXION EN LOCAL
 		 try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url="jdbc:mysql://localhost:3306/bd_xcomic";

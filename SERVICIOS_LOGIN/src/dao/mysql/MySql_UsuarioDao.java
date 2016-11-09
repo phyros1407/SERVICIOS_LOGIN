@@ -25,7 +25,7 @@ public class MySql_UsuarioDao extends MySqlDAOFactory implements UsuarioDao {
 			String query = " SELECT * "
 					+ " FROM t_persona p"
 					+ " INNER JOIN t_usuario u ON p.ID = u.USU_ID "
-					+ " WHERE u.USER = "+usuario+" AND u.PASS = "+contraseña+" ";
+					+ " WHERE u.USER = '"+usuario+"' AND u.PASS = '"+contraseña+"' ";
 			
 			ResultSet rs = stmt.executeQuery(query);
 			
